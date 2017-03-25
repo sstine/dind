@@ -1,4 +1,5 @@
-FROM ubuntu:14.04
+# FROM ubuntu:14.04
+FROM node:6.9
 MAINTAINER jerome.petazzoni@docker.com
 
 # Let's start with some basic stuff.
@@ -7,12 +8,12 @@ RUN apt-get update -qq && apt-get install -qqy \
     ca-certificates \
     curl \
     lxc \
-    iptables \
-    nodejs \
-    npm
+    iptables
+    # nodejs \
+    # npm
 
 # Install `nodejs` as `node`    
-RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
+# RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 
 # Install Docker from Docker Inc. repositories.
 RUN curl -sSL https://get.docker.com/ | sh
